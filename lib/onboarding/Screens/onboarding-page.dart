@@ -30,7 +30,7 @@ class _OnboardingPage extends State<OnboardingPage>{
           Expanded(
             child: Container(
               width: double.infinity,
-              color: Colors.blue,
+              color: Color(0XFF004FA3),
               child: Padding(
                 padding: EdgeInsets.only(top: 35),
                 child: Column(
