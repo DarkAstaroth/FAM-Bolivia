@@ -1,6 +1,12 @@
+import 'package:fam_bolivia/onboarding/Data/onboarding-page-data.dart';
+import 'package:fam_bolivia/onboarding/Screens/onboarding-page.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding extends StatelessWidget{
+  
+  final PageController pageController=PageController();
+  final ValueNotifier currentPageNotifier=ValueNotifier<int>(0);
+
   @override
   Widget build(BuildContext context) {
     
@@ -8,11 +14,15 @@ class Onboarding extends StatelessWidget{
       child: Scaffold(
         body: Stack(
           children: <Widget>[
-            Container(
-              
-              decoration: BoxDecoration(
-                color: Colors.blue
-              ),
+            PageView.builder(
+              onPageChanged: (int index){
+                currentPageNotifier.value=index; 
+              },
+              itemBuilder: (BuildContext builderContext, int index)=>
+                OnboardingPage(entry:onboardingData[index],pageController:pageController)
+              ,
+              itemCount: onboardingData.length,
+                              
             ),
             Container(
               child: Row(
@@ -24,7 +34,8 @@ class Onboarding extends StatelessWidget{
                       "Bienvenido",
                       style: TextStyle(
                         fontSize: 20,
-                        fontFamily: "LatoBold"
+                        fontFamily: "LatoBold",
+                        fontWeight: FontWeight.w900
                       ),
                     ),                   
                   ),
