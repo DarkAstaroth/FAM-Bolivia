@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 class Onboarding extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    
     return SafeArea(
       child: Scaffold(
-        
         body: Stack(
           children: <Widget>[
             Container(
