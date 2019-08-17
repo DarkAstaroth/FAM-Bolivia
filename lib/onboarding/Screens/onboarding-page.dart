@@ -24,7 +24,14 @@ class _OnboardingPage extends State<OnboardingPage>{
           ),
           Expanded(
             child: Container(
+              width: double.infinity,
               color: Colors.white,
+              child: Center(
+                child: Padding(
+                padding: EdgeInsets.all(40),
+                child: Image(image: AssetImage(widget.entry.pathImg),),
+              ),
+              )
             ),
           ),
           Expanded(
