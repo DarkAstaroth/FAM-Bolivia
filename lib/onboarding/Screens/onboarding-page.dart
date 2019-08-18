@@ -1,3 +1,4 @@
+import 'package:fam_bolivia/onboarding/Model/button-white.dart';
 import 'package:fam_bolivia/onboarding/Model/onboarding-page-model.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,12 @@ class _OnboardingPage extends State<OnboardingPage> {
   
   btn(){
   if(widget.entry.pageNumber == 3){
-    return Text("w");
+    return Padding(
+      padding: EdgeInsets.only(top:10),
+      child: Container(
+        child: ButtonWhite("Comenzar"),
+      ),
+    );
   }
 }
   @override
@@ -71,10 +77,7 @@ class _OnboardingPage extends State<OnboardingPage> {
                       ),
                     ),
                     Container(
-                      child: Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: btn(),
-                      ),
+                      child: btn()
                     )
                   ],
                 ),
