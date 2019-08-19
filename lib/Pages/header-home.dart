@@ -15,7 +15,7 @@ class HeaderHome extends StatelessWidget{
         children: <Widget>[
           Expanded(
             child: Container(
-              height: 200,
+              height: 180,
               child: Center(
                 child: Text("Directorio de Asociaciones\nMunicipales de Bolivia",
                 style: TextStyle(

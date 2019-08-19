@@ -8,7 +8,7 @@ class HomeList extends StatelessWidget{
     return Container(
             width: double.infinity,
             height: double.infinity,
-            margin: EdgeInsets.only(top:160),
+            margin: EdgeInsets.only(top:135),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -36,7 +36,7 @@ class HomeList extends StatelessWidget{
                   child: Container(
                     width: double.infinity,
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: 60),
+                      padding: EdgeInsets.only(bottom: 0),
                       child: ListView(
                         children: <Widget>[
                           OptionHome("assets/images/lapaz.jpg"),
