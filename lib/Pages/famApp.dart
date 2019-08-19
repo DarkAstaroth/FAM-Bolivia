@@ -35,15 +35,15 @@ class _FamApp extends State<FamApp>{
           currentIndex: indextap,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.book),
               title: Text("")
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.call),
               title: Text("")
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.info),
               title: Text("")
             ),
           ],
