@@ -1,5 +1,6 @@
 import 'package:fam_bolivia/Pages/home.dart';
 import 'package:flutter/material.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 class FamApp extends StatefulWidget{
   State<StatefulWidget> createState(){
@@ -25,30 +26,31 @@ class _FamApp extends State<FamApp>{
   Widget build(BuildContext context) {
     return Scaffold(
       body: widgetsChildren[indextap] ,
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          canvasColor: Colors.white,
-          primaryColor: Colors.indigo
-        ),
-        child: BottomNavigationBar(
-          onTap: onTapTapped,
-          currentIndex: indextap,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              title: Text("")
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.call),
-              title: Text("")
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.info),
-              title: Text("")
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: BottomNavyBar(
+        selectedIndex: indextap,
+        showElevation: true,
+        onItemSelected: (index)=> setState((){
+          indextap=index;
+          onTapTapped(index);
+        }),
+        items: [
+          BottomNavyBarItem(
+            icon: Icon(Icons.book),
+            title: Text("Directorio"),
+            activeColor: Color(0xff004fa3),
+          ),
+           BottomNavyBarItem(
+            icon: Icon(Icons.phone),
+            title: Text("Contactos"),
+            activeColor: Color(0xff004fa3)
+          ),
+           BottomNavyBarItem(
+            icon: Icon(Icons.info),
+            title: Text("Ayuda"),
+            activeColor: Color(0xff004fa3)
+          ),
+        ],
+      )
     );
   }
 
