@@ -14,7 +14,8 @@ class HomeList extends StatelessWidget{
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20)
-              )
+              ),
+             
             ),
             child: Column(
               children: <Widget>[
@@ -39,14 +40,16 @@ class HomeList extends StatelessWidget{
                       padding: EdgeInsets.only(bottom: 0),
                       child: ListView(
                         children: <Widget>[
-                          OptionHome("assets/images/lapaz.jpg"),
-                          OptionHome("assets/images/lapaz.jpg"),
-                          OptionHome("assets/images/lapaz.jpg"),
-                          OptionHome("assets/images/lapaz.jpg"),
-                          OptionHome("assets/images/lapaz.jpg"),
-                          OptionHome("assets/images/lapaz.jpg"),
-                          OptionHome("assets/images/lapaz.jpg"),
-                          OptionHome("assets/images/lapaz.jpg"),
+                          OptionHome("assets/images/lapaz.jpg","La Paz"),
+                          OptionHome("assets/images/cbba.png","Cochabamba"),
+                          OptionHome("assets/images/scz.png","Santa Cruz"),
+                          OptionHome("assets/images/lapaz.jpg","Chuquisaca"),
+                          OptionHome("assets/images/lapaz.jpg","Oruro"),
+                          OptionHome("assets/images/lapaz.jpg","Potosi"),
+                          OptionHome("assets/images/lapaz.jpg","Beni"),
+                          OptionHome("assets/images/lapaz.jpg","Pando"),
+                          OptionHome("assets/images/lapaz.jpg","Tarija"),
+
                         ],
                       ),
                     ),
