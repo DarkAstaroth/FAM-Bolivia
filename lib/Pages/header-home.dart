@@ -3,6 +3,7 @@ import 'package:share/share.dart';
 
 class HeaderHome extends StatelessWidget{
   @override
+  
   Widget build(BuildContext context) {
     
     return  Container(
@@ -13,12 +14,17 @@ class HeaderHome extends StatelessWidget{
       ),
       child: Stack(
         children: <Widget>[
+          
           Container(
             margin: EdgeInsets.only(left: 20,right: 20),
             alignment: Alignment.bottomRight,
             height: 80,
             width: double.infinity,            
-            child: IconButton(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                IconButton(
+                  
               icon: Icon(
                 Icons.share
               ),
@@ -27,7 +33,10 @@ class HeaderHome extends StatelessWidget{
               },
               color: Colors.white,
             ),
+              ],
+            )
           ),
+          
           Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -45,7 +54,8 @@ class HeaderHome extends StatelessWidget{
                 ),
               ),
             ),
-          )
+          ),
+
         ],
       )
         ],

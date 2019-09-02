@@ -12,7 +12,8 @@ class HomeScreen extends StatelessWidget{
           HeaderHome(),
           HomeList()          
         ],
-      )
+      ),
+      
     );
   }
 

@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -47,6 +47,13 @@ flutter:
    - assets/images/lapaz.jpg
    - assets/images/cbba.png
    - assets/images/scz.png
+   - assets/images/oruro.png
+   - assets/images/potosi.png
+   - assets/images/sucre.png
+   - assets/images/beni.png
+   - assets/images/tarija.png
+   - assets/images/cobija.jpg
+   - assets/images/ic_launcher.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
