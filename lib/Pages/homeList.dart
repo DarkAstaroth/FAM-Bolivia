@@ -26,17 +26,17 @@ class HomeList extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(bottom: 0),
               child: ListView(
-                children: <Widget>[
-                  OptionHome("assets/images/lapaz.jpg", "La Paz",
-                      "assets/images/cbba.png", "Cochabamba"),
-                  OptionHome("assets/images/scz.png", "Santa Cruz",
-                      "assets/images/oruro.png", "Oruro"),
-                  OptionHome("assets/images/potosi.png", "Potosi",
-                      "assets/images/sucre.png", "Sucre"),
-                  OptionHome("assets/images/beni.png", "Beni",
-                      "assets/images/tarija.png", "Tarija"),
-                  OptionHome("assets/images/cobija.jpg", "Pando",
-                      "assets/images/cbba.png", "Amdes / Aco"),
+                
+                children: <Widget>[ 
+                  OptionHome("assets/images/lapaz.jpg", "La Paz"),
+                  OptionHome("assets/images/cbba.png", "Cochabamba"),
+                  OptionHome("assets/images/scz.png", "Santa Cruz"),
+                  OptionHome("assets/images/oruro.png", "Oruro"),
+                  OptionHome("assets/images/potosi.png", "Potosí"),
+                  OptionHome("assets/images/sucre.png", "Sucre"),
+                  OptionHome("assets/images/tarija.png", "Tarija"),
+                  OptionHome("assets/images/beni.png", "Beni"),
+                  OptionHome("assets/images/cobija.jpg", "Cobija"),
                 ],
               ),
             ),

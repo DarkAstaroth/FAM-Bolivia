@@ -1,105 +1,77 @@
+
 import 'package:flutter/material.dart';
+
+import 'DepScreen.dart';
 
 class OptionHome extends StatelessWidget {
   final String imaPath;
   final String nomDep;
-  final String imaPath2;
-  final String nomDep2;
 
-  OptionHome(this.imaPath, this.nomDep,this.imaPath2,this.nomDep2);
+  OptionHome(this.imaPath, this.nomDep);
   @override
-
-  
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.white,
-        height: 150,
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Padding(
-                  padding: EdgeInsets.only(top:5,left:10,right: 5,bottom: 10 ),
-                  child: InkWell(
-                    onTap: () {
-                      Scaffold.of(context).showSnackBar(SnackBar(
-                        content: Text("1"),
-                      ));
-                    },
-                    child: Stack(
+    return InkWell(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder:(context)=> DepScreen()));
+        },
+        child: Container(
+            color: Color(0xffe2e2e2),
+            height: 100,
+            padding: EdgeInsets.only(left: 15, right: 15),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  width: 100,
+                  height: 80,
+                  margin: EdgeInsets.only(right: 0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(5),
+                      bottomLeft: Radius.circular(5)
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage(imaPath),
+                      fit: BoxFit.cover
+                    )
+                    ),
+                ),
+                Expanded(
+                  child: Container(
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(5),
+                        bottomRight: Radius.circular(5)
+                      )
+                      ),
+                    child: Row(
                       children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              image: DecorationImage(
-                                  image: AssetImage(imaPath),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Opacity(
-                          opacity: 0.4,
+                        Expanded(
                           child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)))),
+                              padding: EdgeInsets.all(20),
+                              child: Center(
+                                child: Text(
+                                  nomDep,
+                                  style: TextStyle(
+                                    fontFamily: 'latoBold',
+                                    fontWeight: FontWeight.bold
+                                  ),
+                                ),
+                              )),
                         ),
-                        Center(
-                          child: Text(
-                            nomDep,
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontFamily: "LatoBold",
-                                color: Colors.white),
+                        Container(
+                          width: 50,
+                          child: Center(
+                            child: Icon(Icons.arrow_forward_ios),
                           ),
                         )
                       ],
                     ),
-                  )),
-            ),
-            Expanded(
-              child: Padding(
-                  padding: EdgeInsets.only(top:5,right: 10,left: 5,bottom: 10),
-                  child: InkWell(
-                    onTap: () {
-                      Scaffold.of(context).showSnackBar(SnackBar(
-                        content: Text("1"),
-                      ));
-                    },
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              image: DecorationImage(
-                                  image: AssetImage(imaPath2),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Opacity(
-                          opacity: 0.4,
-                          child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10)))),
-                        ),
-                        Center(
-                          child: Text(
-                            nomDep2,
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontFamily: "LatoBold",
-                                color: Colors.white),
-                          ),
-                        )
-                      ],
-                    ),
-                  )
                   ),
-            )
-          ],
-        )
-        );
+                )
+              ],
+            )));
   }
 }
