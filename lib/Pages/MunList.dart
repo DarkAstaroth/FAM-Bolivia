@@ -1,21 +1,22 @@
-import 'package:fam_bolivia/Pages/optionHome.dart';
 import 'package:flutter/material.dart';
+import 'optionMun.dart';
 
-class HomeList extends StatelessWidget {
+class MunList extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: double.infinity,
-      margin: EdgeInsets.only(top: 135),
-      decoration: BoxDecoration(
-        color: Colors.green,
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-      ),
-      child: Stack(
-        children: <Widget>[
-          Container(
+            height: double.infinity,
+            margin: EdgeInsets.only(top: 150),
+            decoration: BoxDecoration(
+              color: Color(0xffe2e2e2),
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(20),
+                topLeft: Radius.circular(20)
+              )
+            ),
+            child: Stack(
+              children: <Widget>[
+                Container(
             margin: EdgeInsets.only(top: 25),
             width: double.infinity,
             decoration: BoxDecoration(
@@ -28,20 +29,15 @@ class HomeList extends StatelessWidget {
               child: ListView(
                 
                 children: <Widget>[ 
-                  OptionHome("assets/images/lapaz.jpg", "La Paz"),
-                  OptionHome("assets/images/cbba.png", "Cochabamba"),
-                  OptionHome("assets/images/scz.png", "Santa Cruz"),
-                  OptionHome("assets/images/oruro.png", "Oruro"),
-                  OptionHome("assets/images/potosi.png", "Potosí"),
-                  OptionHome("assets/images/sucre.png", "Sucre"),
-                  OptionHome("assets/images/tarija.png", "Tarija"),
-                  OptionHome("assets/images/beni.png", "Beni"),
-                  OptionHome("assets/images/cobija.jpg", "Cobija"),
+                  OptionMun("assets/images/lapaz.jpg", "La Paz"),
+                  OptionMun("assets/images/lapaz.jpg", "La Paz"),
+                  OptionMun("assets/images/lapaz.jpg", "La Paz"),
+                  OptionMun("assets/images/lapaz.jpg", "La Paz"),
                 ],
               ),
             ),
           ),
-          Container(
+                Container(
             height: 50,
             width: double.infinity,
             decoration: BoxDecoration(
@@ -51,7 +47,7 @@ class HomeList extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                "Departamentos",
+                "Contactos",
                 style: TextStyle(
                     fontFamily: "LatoBold",
                     fontWeight: FontWeight.w500,
@@ -59,8 +55,8 @@ class HomeList extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
-    );
+              ],
+            ),
+          );
   }
 }

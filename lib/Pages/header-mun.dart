@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HeaderDep extends StatelessWidget
+class HeaderMun extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
@@ -41,11 +41,25 @@ class HeaderDep extends StatelessWidget
             
           ),
           Container(
-            height: 80,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                      image: AssetImage('assets/images/lapaz1.png'),
-                    )
+            height: 30,
+            child: Text(
+              "Omasuyo",
+              style: TextStyle(
+                fontFamily: "latoBold",
+                fontSize: 20,
+                color: Colors.white
+              ),
+            ),
+          ),
+          Container(
+            height: 20,
+            child: Text(
+              "4 Contactos",
+              style: TextStyle(
+                fontFamily: "latoRegular",
+                fontSize: 15,
+                color: Colors.white
+              ),
             ),
           )
         ],

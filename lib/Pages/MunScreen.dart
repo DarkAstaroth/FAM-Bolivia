@@ -1,16 +1,15 @@
-import 'package:fam_bolivia/Pages/header-dep.dart';
 import 'package:flutter/material.dart';
+import 'MunList.dart';
+import 'header-mun.dart';
 
-import 'DepList.dart';
-
-class DepScreen extends StatelessWidget {
+class MunScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      return Scaffold(
       body:Stack(
         children: <Widget>[
-          HeaderDep(),
-          DepList()        
+          HeaderMun(),
+          MunList()        
         ],
       ),
       
