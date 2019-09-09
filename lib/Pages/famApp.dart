@@ -15,7 +15,6 @@ class _FamApp extends State<FamApp> {
   final List<Widget> widgetsChildren = [
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
     HomeScreen()
   ];
   void onTapTapped(int index) {
@@ -53,11 +52,7 @@ class _FamApp extends State<FamApp> {
               title: Text("Directorio"),
               activeColor: Color(0xff004fa3),
             ),
-            BottomNavyBarItem(
-              icon: Icon(Icons.search),
-              title: Text("Buscar"),
-              activeColor: Color(0xff004fa3),
-            ),
+            
             BottomNavyBarItem(
                 icon: Icon(Icons.phone),
                 title: Text("Contactos"),
