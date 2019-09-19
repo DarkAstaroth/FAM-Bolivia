@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "358499352908",
+    "firebase_url": "https://fambolivia-f1952.firebaseio.com",
+    "project_id": "fambolivia-f1952",
+    "storage_bucket": "fambolivia-f1952.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358499352908:android:b6dbcda814135dfcea0fe9",
+        "android_client_info": {
+          "package_name": "com.example.fam_bolivia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358499352908-bhmbtt4943q2fj4nd98dbgcfpiksnp7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fam_bolivia",
+            "certificate_hash": "a6303f25449876a590c437806e6775e037fb221c"
+          }
+        },
+        {
+          "client_id": "358499352908-giscv2inoec1gaf79et0ab6ogj2oeu27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlEl4PyIkWTrChLLEU79uiAeSxp_vBkwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358499352908-giscv2inoec1gaf79et0ab6ogj2oeu27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
