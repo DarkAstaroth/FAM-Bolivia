@@ -1,8 +1,15 @@
 
+import 'package:fam_bolivia/Pages/beni/BNIScreen.dart';
+import 'package:fam_bolivia/Pages/pando/PNDScreen.dart';
+import 'package:fam_bolivia/Pages/potosi/PSIScreen.dart';
+import 'package:fam_bolivia/Pages/scz/SCZScreen.dart';
+import 'package:fam_bolivia/Pages/sucre/SCRScreen.dart';
+import 'package:fam_bolivia/Pages/tarija/TJAScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'cbba/CBBAScreen.dart';
 import 'lapaz/LPScreen.dart';
+import 'oruro/ORUScreen.dart';
 
 class OptionHome extends StatelessWidget {
   final String imaPath;
@@ -18,6 +25,27 @@ class OptionHome extends StatelessWidget {
           }
           if (nomDep=='Cochabamba') {
             Navigator.push(context, MaterialPageRoute(builder:(context)=> CBBAScreen()));
+          }
+          if (nomDep=='Santa Cruz') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> SCZScreen()));
+          }
+          if (nomDep=='Oruro') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> ORUScreen()));
+          }
+          if (nomDep=='Potosí') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> PSIScreen()));
+          }
+          if (nomDep=='Sucre') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> SCRScreen()));
+          }
+          if (nomDep=='Tarija') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> TJAScreen()));
+          }
+          if (nomDep=='Beni') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> BNIScreen()));
+          }
+          if (nomDep=='Cobija') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> PNDScreen()));
           }
           
         },

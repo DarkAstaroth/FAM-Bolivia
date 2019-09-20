@@ -2,14 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class LPList extends StatefulWidget {
-  _LPList createState() => _LPList();
+class ORUList extends StatefulWidget {
+  _ORUList createState() => _ORUList();
 }
 
-class _LPList extends State<LPList> {
+class _ORUList extends State<ORUList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("lapaz").getDocuments();
+    QuerySnapshot qn = await firestore.collection("oruro").getDocuments();
     return qn.documents;
   }
 
@@ -201,7 +201,7 @@ class _LPList extends State<LPList> {
             ),
             child: Center(
               child: Text(
-                "La Paz",
+                "Oruro",
                 style: TextStyle(
                     fontFamily: "LatoBold",
                     fontWeight: FontWeight.w500,

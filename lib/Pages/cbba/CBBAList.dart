@@ -131,19 +131,14 @@ class _CBBAList extends State<CBBAList> {
                                   ),
                                   Row(
                                     children: <Widget>[
-                                      Flexible(
-                                        child:Container(
-                                          child:Text(
+                                      Text(
                                         "Correo:",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
-                                      )
-                                        )
                                       ),
-                                      Container(
-                                        child: Text(
-                                            "${notNull(snapshot.data[index].data["correo"])}"),
+                                      Flexible(
+                                        child: Text("${notNull(snapshot.data[index].data["correo"])}"),
                                       )
                                     ],
                                   ),
