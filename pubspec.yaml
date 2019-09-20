@@ -67,6 +67,14 @@ flutter:
    - assets/images/sajama1.jpg
    - assets/images/pando1.jpg
    - assets/images/pando2.jpg
+   - assets/images/benid.png
+   - assets/images/cbbad.png
+   - assets/images/orurod.png
+   - assets/images/pandod.png
+   - assets/images/potosid.png
+   - assets/images/sczd.png
+   - assets/images/sucred.png
+   - assets/images/tarijad.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

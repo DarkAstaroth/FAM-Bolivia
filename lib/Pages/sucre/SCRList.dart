@@ -201,7 +201,7 @@ class _SCRList extends State<SCRList> {
             ),
             child: Center(
               child: Text(
-                "Chuquisaca",
+                "Sucre",
                 style: TextStyle(
                     fontFamily: "LatoBold",
                     fontWeight: FontWeight.w500,

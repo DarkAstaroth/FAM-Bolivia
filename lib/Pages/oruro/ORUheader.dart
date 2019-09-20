@@ -44,7 +44,7 @@ class ORUHeader extends StatelessWidget
             height: 80,
             decoration: BoxDecoration(
               image: DecorationImage(
-                      image: AssetImage('assets/images/lapaz1.png'),
+                      image: AssetImage('assets/images/orurod.png'),
                     )
             ),
           )
