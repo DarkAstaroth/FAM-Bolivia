@@ -1,3 +1,4 @@
+import 'package:fam_bolivia/Pages/acercade/info.dart';
 import 'package:fam_bolivia/Pages/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
@@ -17,7 +18,7 @@ class _FamApp extends State<FamApp> {
   final List<Widget> widgetsChildren = [
     HomeScreen(),
     ContactoScreen(),
-    HomeScreen()
+    InfoScreen()
   ];
   void onTapTapped(int index) {
     setState(() {

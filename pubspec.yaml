@@ -58,6 +58,15 @@ flutter:
    - assets/images/cobija.jpg
    - assets/images/ic_launcher.png
    - assets/images/logofam.png
+   - assets/images/cbba1.jpg
+   - assets/images/cbba2.jpg
+   - assets/images/cbba3.jpg
+   - assets/images/sucre1.jpg
+   - assets/images/coroico1.jpg
+   - assets/images/copa1.jpg
+   - assets/images/sajama1.jpg
+   - assets/images/pando1.jpg
+   - assets/images/pando2.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
