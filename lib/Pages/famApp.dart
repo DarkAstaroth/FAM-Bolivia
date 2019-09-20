@@ -2,6 +2,8 @@ import 'package:fam_bolivia/Pages/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
+import 'contacto/Contacto.dart';
+
 class FamApp extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _FamApp();
@@ -14,7 +16,7 @@ class _FamApp extends State<FamApp> {
 
   final List<Widget> widgetsChildren = [
     HomeScreen(),
-    HomeScreen(),
+    ContactoScreen(),
     HomeScreen()
   ];
   void onTapTapped(int index) {
@@ -59,7 +61,7 @@ class _FamApp extends State<FamApp> {
                 activeColor: Color(0xff004fa3)),
             BottomNavyBarItem(
                 icon: Icon(Icons.info),
-                title: Text("Ayuda"),
+                title: Text("Acerca de"),
                 activeColor: Color(0xff004fa3)),
           ],
         ));
