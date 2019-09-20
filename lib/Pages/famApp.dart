@@ -17,8 +17,8 @@ class _FamApp extends State<FamApp> {
 
   final List<Widget> widgetsChildren = [
     HomeScreen(),
-    ContactoScreen(),
-    InfoScreen()
+    InfoScreen(),
+    ContactoScreen()
   ];
   void onTapTapped(int index) {
     setState(() {
@@ -57,12 +57,12 @@ class _FamApp extends State<FamApp> {
             ),
             
             BottomNavyBarItem(
-                icon: Icon(Icons.phone),
-                title: Text("Contactos"),
-                activeColor: Color(0xff004fa3)),
-            BottomNavyBarItem(
                 icon: Icon(Icons.info),
                 title: Text("Acerca de"),
+                activeColor: Color(0xff004fa3)),
+            BottomNavyBarItem(
+                icon: Icon(Icons.phone),
+                title: Text("Contactos"),
                 activeColor: Color(0xff004fa3)),
           ],
         ));
