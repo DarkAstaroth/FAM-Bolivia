@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'MunScreen.dart';
 
 class OptionDep extends StatelessWidget {
   final String imaPath;
@@ -10,8 +9,7 @@ class OptionDep extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => MunScreen()));
+          
         },
         child: Container(
             color: Color(0xffe2e2e2),
@@ -21,13 +19,13 @@ class OptionDep extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: Container(
-                    height: 70,
+                    height: 200,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topRight: Radius.circular(5),
                             bottomRight: Radius.circular(5))),
-                    child: Row(
+                    child: Column(
                       children: <Widget>[
                         Expanded(
                           child: Container(
@@ -83,6 +81,8 @@ class OptionDep extends StatelessWidget {
                   ),
                 )
               ],
-            )));
+            )
+            )
+            );
   }
 }
