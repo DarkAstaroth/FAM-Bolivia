@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'optionDep.dart';
 import 'dart:async';
 
 class DepList extends StatefulWidget {
@@ -16,12 +15,20 @@ class _DepList extends State<DepList> {
 
   @override
   Widget build(BuildContext context) {
+    
+    notNull(snapshot) {
+      if (snapshot == null) {
+        return "Sin datos";
+      } else {
+        return snapshot;
+      }
+    }
 
     return Container(
       height: double.infinity,
       margin: EdgeInsets.only(top: 180),
       decoration: BoxDecoration(
-          color: Color(0xffe2e2e2),
+          color: Color(0xfff2f2f2),
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20), topLeft: Radius.circular(20))),
       child: Stack(
@@ -61,14 +68,26 @@ class _DepList extends State<DepList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
+                                        "Nº:",
+                                        style: TextStyle(
+                                            color: Color(0xff004fa3),
+                                            fontFamily: "LatoBold"),
+                                      ),
+                                      Container(
+                                        child: Text("${index+1}"),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
                                         "Provincia:",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
                                       ),
                                       Container(
-                                        child: Text(snapshot
-                                            .data[index].data["provincia"]),
+                                        child: Text("${notNull(snapshot.data[index].data["provincia"])}"),
                                       )
                                     ],
                                   ),
@@ -80,9 +99,8 @@ class _DepList extends State<DepList> {
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
                                       ),
-                                      Container(
-                                        child: Text(snapshot
-                                            .data[index].data["municipio"]),
+                                      Flexible(
+                                        child: Text("${notNull(snapshot.data[index].data["municipio"])}"),
                                       )
                                     ],
                                   ),
@@ -95,9 +113,7 @@ class _DepList extends State<DepList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Container(
-                                        child: Text(snapshot
-                                            .data[index].data["aniversario"]),
-                                      )
+                                        child: Text("${notNull(snapshot.data[index].data["aniversario"])}")                                   )
                                     ],
                                   ),
                                   Row(
@@ -108,23 +124,26 @@ class _DepList extends State<DepList> {
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
                                       ),
-                                      Container(
-                                        child: Text(snapshot
-                                            .data[index].data["nombre"]),
+                                      Flexible(
+                                        child: Text("${notNull(snapshot.data[index].data["nombre"])}"),
                                       )
                                     ],
                                   ),
                                   Row(
                                     children: <Widget>[
-                                      Text(
+                                      Flexible(
+                                        child:Container(
+                                          child:Text(
                                         "Correo:",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
+                                      )
+                                        )
                                       ),
                                       Container(
                                         child: Text(
-                                            "${snapshot.data[index].data["correo"]}"),
+                                            "${notNull(snapshot.data[index].data["correo"])}"),
                                       )
                                     ],
                                   ),
@@ -138,7 +157,7 @@ class _DepList extends State<DepList> {
                                       ),
                                       Container(
                                         child: Text(
-                                            "${snapshot.data[index].data["telefonos"]}"),
+                                            "${notNull(snapshot.data[index].data["telefonos"])}"),
                                       )
                                     ],
                                   ),
@@ -152,19 +171,22 @@ class _DepList extends State<DepList> {
                                       ),
                                       Container(
                                         child: Text(
-                                            "${snapshot.data[index].data["fax"]}"),
+                                            "${notNull(snapshot.data[index].data["fax"])}"),
                                       )
                                     ],
                                   ),
-                                  Text(
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
                                     "Dirección:",
                                     style: TextStyle(
                                         color: Color(0xff004fa3),
                                         fontFamily: "LatoBold"),
                                   ),
+                                  ),
                                   Container(
                                     child: Text(
-                                        "${snapshot.data[index].data["direccion"]}"),
+                                        "${notNull(snapshot.data[index].data["direccion"])}"),
                                   )
                                 ],
                               ),
@@ -184,7 +206,7 @@ class _DepList extends State<DepList> {
             ),
             child: Center(
               child: Text(
-                "Provincias",
+                "La Paz",
                 style: TextStyle(
                     fontFamily: "LatoBold",
                     fontWeight: FontWeight.w500,
