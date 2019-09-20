@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HeaderDep extends StatelessWidget
+class LPHeader extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {

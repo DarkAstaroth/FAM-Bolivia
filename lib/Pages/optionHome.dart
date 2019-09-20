@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'DepScreen.dart';
+import 'cbba/CBBAScreen.dart';
+import 'lapaz/LPScreen.dart';
 
 class OptionHome extends StatelessWidget {
   final String imaPath;
@@ -12,7 +13,13 @@ class OptionHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder:(context)=> DepScreen()));
+          if (nomDep=='La Paz') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> LPScreen()));
+          }
+          if (nomDep=='Cochabamba') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> CBBAScreen()));
+          }
+          
         },
         child: Container(
             color: Color(0xffe2e2e2),

@@ -1,6 +1,6 @@
-import 'package:fam_bolivia/Pages/header-home.dart';
-import 'package:fam_bolivia/Pages/homeList.dart';
 import 'package:flutter/material.dart';
+import 'header-home.dart';
+import 'homeList.dart';
 
 class HomeScreen extends StatelessWidget{
   @override

@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class DepList extends StatefulWidget {
-  _DepList createState() => _DepList();
+class LPList extends StatefulWidget {
+  _LPList createState() => _LPList();
 }
 
-class _DepList extends State<DepList> {
+class _LPList extends State<LPList> {
   Future getPost() async {
     var firestore = Firestore.instance;
     QuerySnapshot qn = await firestore.collection("lapaz").getDocuments();
