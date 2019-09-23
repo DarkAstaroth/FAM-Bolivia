@@ -5,6 +5,7 @@ import io.flutter.plugins.firebase.cloudfirestore.CloudFirestorePlugin;
 import io.flutter.plugins.firebase.core.FirebaseCorePlugin;
 import io.flutter.plugins.firebase.database.FirebaseDatabasePlugin;
 import io.flutter.plugins.share.SharePlugin;
+import io.flutter.plugins.urllauncher.UrlLauncherPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -18,6 +19,7 @@ public final class GeneratedPluginRegistrant {
     FirebaseCorePlugin.registerWith(registry.registrarFor("io.flutter.plugins.firebase.core.FirebaseCorePlugin"));
     FirebaseDatabasePlugin.registerWith(registry.registrarFor("io.flutter.plugins.firebase.database.FirebaseDatabasePlugin"));
     SharePlugin.registerWith(registry.registrarFor("io.flutter.plugins.share.SharePlugin"));
+    UrlLauncherPlugin.registerWith(registry.registrarFor("io.flutter.plugins.urllauncher.UrlLauncherPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {
