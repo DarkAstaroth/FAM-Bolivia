@@ -37,6 +37,7 @@ class HomeList extends StatelessWidget {
                   OptionHome("assets/images/tarija.png", "Tarija"),
                   OptionHome("assets/images/beni.png", "Beni"),
                   OptionHome("assets/images/cobija.jpg", "Cobija"),
+                  OptionHome("assets/images/aco.jpg", "ACO")
                 ],
               ),
             ),

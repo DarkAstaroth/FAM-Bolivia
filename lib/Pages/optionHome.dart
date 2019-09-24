@@ -7,6 +7,7 @@ import 'package:fam_bolivia/Pages/sucre/SCRScreen.dart';
 import 'package:fam_bolivia/Pages/tarija/TJAScreen.dart';
 import 'package:flutter/material.dart';
 
+import 'aco/ACOScreen.dart';
 import 'cbba/CBBAScreen.dart';
 import 'lapaz/LPScreen.dart';
 import 'oruro/ORUScreen.dart';
@@ -46,6 +47,9 @@ class OptionHome extends StatelessWidget {
           }
           if (nomDep=='Cobija') {
             Navigator.push(context, MaterialPageRoute(builder:(context)=> PNDScreen()));
+          }
+          if (nomDep=='ACO') {
+            Navigator.push(context, MaterialPageRoute(builder:(context)=> ACOScreen()));
           }
           
         },
