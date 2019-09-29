@@ -42,6 +42,15 @@ class ContactoScreen extends StatelessWidget {
       }
     }
 
+    _launchURLLink() async {
+      const url = 'https://www.linkedin.com/in/fam-bolivia-91797b36';
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'No se puede abrir $url';
+      }
+    }
+
     return Scaffold(
         body: Column(
       children: <Widget>[
@@ -162,6 +171,11 @@ class ContactoScreen extends StatelessWidget {
                               color: Colors.white,
                               icon: new Icon(FontAwesomeIcons.youtube),
                               onPressed: _launchURLYoutube,
+                            ),
+                            IconButton(
+                              color: Colors.white,
+                              icon: new Icon(FontAwesomeIcons.linkedin),
+                              onPressed: _launchURLLink,
                             )
                           ],
                         )),
