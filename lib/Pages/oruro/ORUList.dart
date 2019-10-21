@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-
+import 'package:url_launcher/url_launcher.dart';
 class ORUList extends StatefulWidget {
   _ORUList createState() => _ORUList();
 }
@@ -21,6 +21,23 @@ class _ORUList extends State<ORUList> {
         return "Sin datos";
       } else {
         return snapshot;
+      }
+    }
+
+    callnumber(snapshot) async {
+      if (snapshot == null) {
+        return Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text("No hay un teléfono disponible"),
+          duration: Duration(seconds: 3),
+        ));
+      } else {
+        String a = snapshot;
+        String url = "tel:$a";
+        if (await canLaunch(url)) {
+          await launch(url);
+        } else {
+          throw "No se ha podido conectar";
+        }
       }
     }
 
@@ -47,7 +64,7 @@ class _ORUList extends State<ORUList> {
                     builder: (_, AsyncSnapshot snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Center(
-                          child: Text("Loading.."),
+                          child: CircularProgressIndicator(),
                         );
                       } else {
                         return ListView.builder(
@@ -68,7 +85,7 @@ class _ORUList extends State<ORUList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Nº:",
+                                        "Nº:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -78,23 +95,11 @@ class _ORUList extends State<ORUList> {
                                       )
                                     ],
                                   ),
+                                  
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Provincia:",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text("${notNull(snapshot.data[index].data["provincia"])}"),
-                                      )
-                                    ],
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "Municipio:",
+                                        "Municipio:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -107,7 +112,20 @@ class _ORUList extends State<ORUList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Aniversario:",
+                                        "Provincia:  ",
+                                        style: TextStyle(
+                                            color: Color(0xff004fa3),
+                                            fontFamily: "LatoBold"),
+                                      ),
+                                      Container(
+                                        child: Text("${notNull(snapshot.data[index].data["provincia"])}"),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Aniversario:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -119,7 +137,7 @@ class _ORUList extends State<ORUList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Nombre:",
+                                        "Alcalde:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -132,7 +150,7 @@ class _ORUList extends State<ORUList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Correo:",
+                                        "Correo:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -145,44 +163,48 @@ class _ORUList extends State<ORUList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Teléfonos:",
+                                        "Teléfonos:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
                                       ),
                                       Container(
                                         child: Text(
-                                            "${notNull(snapshot.data[index].data["telefonos"])}"),
+                                            "${notNull(snapshot.data[index].data["telefono"])}"),
                                       )
                                     ],
                                   ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "Teléfono Fax:",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text(
-                                            "${notNull(snapshot.data[index].data["fax"])}"),
-                                      )
-                                    ],
-                                  ),
+                                  
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                    "Dirección:",
+                                    "Dirección:  ",
                                     style: TextStyle(
                                         color: Color(0xff004fa3),
                                         fontFamily: "LatoBold"),
                                   ),
                                   ),
                                   Container(
-                                    child: Text(
-                                        "${notNull(snapshot.data[index].data["direccion"])}"),
-                                  )
+                                      child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Flexible(
+                                        child: Text(
+                                            "${notNull(snapshot.data[index].data["direccion"])}"),
+                                      ),
+                                      Center(
+                                          child: FloatingActionButton(
+                                        onPressed: () async {
+                                          await callnumber(snapshot
+                                              .data[index].data["telefono"]);
+                                        },
+                                        child: Icon(Icons.phone),
+                                      ))
+                                    ],
+                                  ))
                                 ],
                               ),
                             );

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:url_launcher/url_launcher.dart';
 
 class SCZList extends StatefulWidget {
   _SCZList createState() => _SCZList();
@@ -24,6 +25,23 @@ class _SCZList extends State<SCZList> {
       }
     }
 
+    callnumber(snapshot) async {
+      if (snapshot == null) {
+        return Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text("No existe telefono"),
+          duration: Duration(seconds: 3),
+        ));
+      } else {
+        String a = snapshot;
+        String url = "tel:$a";
+        if (await canLaunch(url)) {
+          await launch(url);
+        } else {
+          throw "No se ha podido conectar";
+        }
+      }
+    }
+
     return Container(
       height: double.infinity,
       margin: EdgeInsets.only(top: 180),
@@ -36,7 +54,7 @@ class _SCZList extends State<SCZList> {
           Container(
             margin: EdgeInsets.only(top: 25),
             decoration: BoxDecoration(
-              color: Color(0xffe2e2e2),
+              color: Colors.grey[100],
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20), topRight: Radius.circular(20)),
             ),
@@ -47,7 +65,7 @@ class _SCZList extends State<SCZList> {
                     builder: (_, AsyncSnapshot snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Center(
-                          child: Text("Loading.."),
+                          child:CircularProgressIndicator(),
                         );
                       } else {
                         return ListView.builder(
@@ -68,7 +86,7 @@ class _SCZList extends State<SCZList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Nº:",
+                                        "Nº:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -81,20 +99,7 @@ class _SCZList extends State<SCZList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Provincia:",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text("${notNull(snapshot.data[index].data["provincia"])}"),
-                                      )
-                                    ],
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "Municipio:",
+                                        "Municipio:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -104,10 +109,25 @@ class _SCZList extends State<SCZList> {
                                       )
                                     ],
                                   ),
+
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Aniversario:",
+                                        "Provincia:  ",
+                                        style: TextStyle(
+                                            color: Color(0xff004fa3),
+                                            fontFamily: "LatoBold"),
+                                      ),
+                                      Container(
+                                        child: Text("${notNull(snapshot.data[index].data["provincia"])}"),
+                                      )
+                                    ],
+                                  ),
+                                  
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Aniversario:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -119,7 +139,7 @@ class _SCZList extends State<SCZList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Nombre:",
+                                        "Alcalde:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -132,7 +152,7 @@ class _SCZList extends State<SCZList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Correo:",
+                                        "Correo:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -145,31 +165,18 @@ class _SCZList extends State<SCZList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Teléfonos:",
+                                        "Teléfonos:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
                                       ),
                                       Container(
                                         child: Text(
-                                            "${notNull(snapshot.data[index].data["telefonos"])}"),
+                                            "${notNull(snapshot.data[index].data["telefono"])}"),
                                       )
                                     ],
                                   ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "Teléfono Fax:",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text(
-                                            "${notNull(snapshot.data[index].data["fax"])}"),
-                                      )
-                                    ],
-                                  ),
+                                  
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
@@ -180,9 +187,26 @@ class _SCZList extends State<SCZList> {
                                   ),
                                   ),
                                   Container(
-                                    child: Text(
-                                        "${notNull(snapshot.data[index].data["direccion"])}"),
-                                  )
+                                      child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Flexible(
+                                        child: Text(
+                                            "${notNull(snapshot.data[index].data["direccion"])}"),
+                                      ),
+                                      Center(
+                                          child: FloatingActionButton(
+                                        onPressed: () async {
+                                          await callnumber(snapshot
+                                              .data[index].data["telefono"]);
+                                        },
+                                        child: Icon(Icons.phone),
+                                      ))
+                                    ],
+                                  ))
                                 ],
                               ),
                             );

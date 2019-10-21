@@ -9,7 +9,7 @@ class HomeList extends StatelessWidget {
       height: double.infinity,
       margin: EdgeInsets.only(top: 135),
       decoration: BoxDecoration(
-        color: Colors.green,
+        color: Colors.red,
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20), topRight: Radius.circular(20)),
       ),
@@ -19,7 +19,7 @@ class HomeList extends StatelessWidget {
             margin: EdgeInsets.only(top: 25),
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Color(0xffe2e2e2),
+              color: Colors.grey[50],
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20), topRight: Radius.circular(20)),
             ),
@@ -33,10 +33,10 @@ class HomeList extends StatelessWidget {
                   OptionHome("assets/images/scz.png", "Santa Cruz"),
                   OptionHome("assets/images/oruro.png", "Oruro"),
                   OptionHome("assets/images/potosi.png", "Potosí"),
-                  OptionHome("assets/images/sucre.png", "Sucre"),
+                  OptionHome("assets/images/sucre.png", "Chuquisaca"),
                   OptionHome("assets/images/tarija.png", "Tarija"),
                   OptionHome("assets/images/beni.png", "Beni"),
-                  OptionHome("assets/images/cobija.jpg", "Cobija"),
+                  OptionHome("assets/images/cobija.jpg", "Pando"),
                   OptionHome("assets/images/aco.jpg", "ACO"),
                   OptionHome("assets/images/amdes.jpg", "AMDES")
                 ],

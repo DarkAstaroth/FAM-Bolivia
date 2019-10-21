@@ -1,4 +1,3 @@
-
 import 'package:fam_bolivia/Pages/beni/BNIScreen.dart';
 import 'package:fam_bolivia/Pages/pando/PNDScreen.dart';
 import 'package:fam_bolivia/Pages/potosi/PSIScreen.dart';
@@ -22,43 +21,56 @@ class OptionHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          if (nomDep=='La Paz') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> LPScreen()));
+          if (nomDep == 'La Paz') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => LPScreen()));
           }
-          if (nomDep=='Cochabamba') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> CBBAScreen()));
+          if (nomDep == 'Cochabamba') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => CBBAScreen()));
           }
-          if (nomDep=='Santa Cruz') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> SCZScreen()));
+          if (nomDep == 'Santa Cruz') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SCZScreen()));
           }
-          if (nomDep=='Oruro') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> ORUScreen()));
+          if (nomDep == 'Oruro') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ORUScreen()));
           }
-          if (nomDep=='Potosí') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> PSIScreen()));
+          if (nomDep == 'Potosí') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => PSIScreen()));
           }
-          if (nomDep=='Sucre') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> SCRScreen()));
+          if (nomDep == 'Chuquisaca') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SCRScreen()));
           }
-          if (nomDep=='Tarija') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> TJAScreen()));
+          if (nomDep == 'Tarija') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => TJAScreen()));
           }
-          if (nomDep=='Beni') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> BNIScreen()));
+          if (nomDep == 'Beni') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => BNIScreen()));
           }
-          if (nomDep=='Cobija') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> PNDScreen()));
+          if (nomDep == 'Pando') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => PNDScreen()));
           }
-          if (nomDep=='ACO') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> ACOScreen()));
+          if (nomDep == 'ACO') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ACOScreen()));
           }
-          if (nomDep=='AMDES') {
-            Navigator.push(context, MaterialPageRoute(builder:(context)=> AMDESScreen()));
+          if (nomDep == 'AMDES') {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AMDESScreen()));
           }
-          
         },
         child: Container(
-            color: Color(0xffe2e2e2),
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              
+            ),
             height: 100,
             padding: EdgeInsets.only(left: 15, right: 15),
             child: Row(
@@ -68,27 +80,21 @@ class OptionHome extends StatelessWidget {
                   height: 80,
                   margin: EdgeInsets.only(right: 0),
                   decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(5),
-                      bottomLeft: Radius.circular(5)
-                    ),
-                    image: DecorationImage(
-                      image: AssetImage(imaPath),
-                      fit: BoxFit.cover
-                    )
-                    ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(5),
+                          bottomLeft: Radius.circular(5)),
+                      image: DecorationImage(
+                          image: AssetImage(imaPath), fit: BoxFit.cover)),
                 ),
                 Expanded(
                   child: Container(
                     height: 80,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(5),
-                        bottomRight: Radius.circular(5)
-                      )
-                      ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(5),
+                            bottomRight: Radius.circular(5))),
                     child: Row(
                       children: <Widget>[
                         Expanded(
@@ -98,9 +104,8 @@ class OptionHome extends StatelessWidget {
                                 child: Text(
                                   nomDep,
                                   style: TextStyle(
-                                    fontFamily: 'latoBold',
-                                    fontWeight: FontWeight.bold
-                                  ),
+                                      fontFamily: 'latoBold',
+                                      fontWeight: FontWeight.bold),
                                 ),
                               )),
                         ),

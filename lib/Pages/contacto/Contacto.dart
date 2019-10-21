@@ -50,8 +50,28 @@ class ContactoScreen extends StatelessWidget {
         throw 'No se puede abrir $url';
       }
     }
+    _launchURLmail() async {
+      const url = 'mailto:contacto@fam.org.bo';
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'No se puede abrir $url';
+      }
+    }
 
-    return Scaffold(
+    _launchURLCall() async {
+      const url = 'tel:22789157';
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'No se puede abrir $url';
+      }
+    }
+
+    return Stack(
+      children: <Widget>[
+        
+        Scaffold(
         body: Column(
       children: <Widget>[
         Container(
@@ -59,7 +79,7 @@ class ContactoScreen extends StatelessWidget {
             child: Container(
               width: 200,
               child: Image(
-                image: AssetImage("assets/images/logofam.png"),
+                image: AssetImage("assets/images/logofamc.png"),
               ),
             )),
         Expanded(
@@ -108,7 +128,7 @@ class ContactoScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 10),
                       child: Text(
-                        '''Teléfono: +591 (2) 2789157\n(2) 2789114 * (2) 2789170\nFax: +591 2 2782106''',
+                        '''(591) (2) 2789157\n(2) 2789114 - (2) 2789170\nFax: (591) 2 2782106''',
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: "Lato Regular",
@@ -128,14 +148,19 @@ class ContactoScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 10),
-                      child: Text(
-                        "fam@fam.org.bo",
+                      child: InkWell(
+                        onTap: ()async{
+                          await _launchURLmail();
+                        },
+                        child: Text(
+                        "contacto@fam.org.bo",
                         style: TextStyle(
                           color: Colors.white,
                           fontFamily: "Lato Regular",
                         ),
                         textAlign: TextAlign.center,
                       ),
+                      )
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 15),
@@ -176,7 +201,8 @@ class ContactoScreen extends StatelessWidget {
                               color: Colors.white,
                               icon: new Icon(FontAwesomeIcons.linkedin),
                               onPressed: _launchURLLink,
-                            )
+                            ),
+                            
                           ],
                         )),
                   ],
@@ -184,6 +210,17 @@ class ContactoScreen extends StatelessWidget {
               )),
         )
       ],
-    ));
+    )),
+    Container(
+      alignment: Alignment.bottomRight,
+      height: 280,
+      padding: EdgeInsets.only(right: 30),
+      child: FloatingActionButton(
+        onPressed:_launchURLCall,
+        child: Icon(Icons.phone),
+      ),
+    )
+      ],
+    );
   }
 }

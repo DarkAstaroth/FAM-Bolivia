@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-
+import 'package:url_launcher/url_launcher.dart';
 class CBBAList extends StatefulWidget {
   _CBBAList createState() => _CBBAList();
 }
@@ -24,6 +24,23 @@ class _CBBAList extends State<CBBAList> {
       }
     }
 
+     callnumber(snapshot) async {
+      if (snapshot == null) {
+        return Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text("No hay un número de teléfono disponible"),
+          duration: Duration(seconds: 3),
+        ));
+      } else {
+        String a = snapshot;
+        String url = "tel:$a";
+        if (await canLaunch(url)) {
+          await launch(url);
+        } else {
+          throw "No se ha podido conectar";
+        }
+      }
+    }
+
     return Container(
       height: double.infinity,
       margin: EdgeInsets.only(top: 180),
@@ -36,7 +53,7 @@ class _CBBAList extends State<CBBAList> {
           Container(
             margin: EdgeInsets.only(top: 25),
             decoration: BoxDecoration(
-              color: Color(0xffe2e2e2),
+              color: Colors.grey[100],
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20), topRight: Radius.circular(20)),
             ),
@@ -47,7 +64,7 @@ class _CBBAList extends State<CBBAList> {
                     builder: (_, AsyncSnapshot snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Center(
-                          child: Text("Loading.."),
+                          child: CircularProgressIndicator(),
                         );
                       } else {
                         return ListView.builder(
@@ -61,6 +78,12 @@ class _CBBAList extends State<CBBAList> {
                                   top: 10, bottom: 10, left: 20, right: 20),
                               decoration: BoxDecoration(
                                   color: Colors.white,
+                                  boxShadow: [
+                                    new BoxShadow(
+                                        color: Colors.grey[300],
+                                        offset: Offset(0.0, 7.0),
+                                        blurRadius: 15.0)
+                                  ],
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10))),
                               child: Column(
@@ -68,7 +91,7 @@ class _CBBAList extends State<CBBAList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Nº:",
+                                        "Nº:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -78,23 +101,11 @@ class _CBBAList extends State<CBBAList> {
                                       )
                                     ],
                                   ),
+                                  
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Provincia:",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text("${notNull(snapshot.data[index].data["provincia"])}"),
-                                      )
-                                    ],
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "Municipio:",
+                                        "Municipio:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -107,7 +118,20 @@ class _CBBAList extends State<CBBAList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Aniversario:",
+                                        "Provincia:  ",
+                                        style: TextStyle(
+                                            color: Color(0xff004fa3),
+                                            fontFamily: "LatoBold"),
+                                      ),
+                                      Container(
+                                        child: Text("${notNull(snapshot.data[index].data["provincia"])}"),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Aniversario:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -119,7 +143,7 @@ class _CBBAList extends State<CBBAList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Nombre:",
+                                        "Alcalde:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -132,7 +156,7 @@ class _CBBAList extends State<CBBAList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Correo:",
+                                        "Correo:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
@@ -145,44 +169,48 @@ class _CBBAList extends State<CBBAList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Teléfonos:",
+                                        "Teléfonos:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
                                       ),
-                                      Container(
+                                      Flexible(
                                         child: Text(
-                                            "${notNull(snapshot.data[index].data["telefonos"])}"),
+                                            "${notNull(snapshot.data[index].data["telefono"])}"),
                                       )
                                     ],
                                   ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "Teléfono Fax:",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text(
-                                            "${notNull(snapshot.data[index].data["fax"])}"),
-                                      )
-                                    ],
-                                  ),
-                                  Align(
+                                  
+                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                    "Dirección:",
-                                    style: TextStyle(
-                                        color: Color(0xff004fa3),
-                                        fontFamily: "LatoBold"),
-                                  ),
+                                      "Dirección:  ",
+                                      style: TextStyle(
+                                          color: Color(0xff004fa3),
+                                          fontFamily: "LatoBold"),
+                                    ),
                                   ),
                                   Container(
-                                    child: Text(
-                                        "${notNull(snapshot.data[index].data["direccion"])}"),
-                                  )
+                                      child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Flexible(
+                                        child: Text(
+                                            "${notNull(snapshot.data[index].data["direccion"])}"),
+                                      ),
+                                      Center(
+                                          child: FloatingActionButton(
+                                        onPressed: () async {
+                                          await callnumber(snapshot
+                                              .data[index].data["telefono"]);
+                                        },
+                                        child: Icon(Icons.phone),
+                                      ))
+                                    ],
+                                  ))
                                 ],
                               ),
                             );

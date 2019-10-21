@@ -48,11 +48,12 @@ class HeaderHome extends StatelessWidget {
                   padding: EdgeInsets.all(0),
                   child:
                   Container(
-                  width: 150,
+                  width: 180,
                   height: 180,
                   
                   child: Container(
-                    padding: EdgeInsets.all(30),
+                    margin: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.all(00),
                     child: Image(image: AssetImage("assets/images/logofam.png"),),
                   ),
                 ),
@@ -62,7 +63,7 @@ class HeaderHome extends StatelessWidget {
                     height: 190,
                     child: Center(
                       child: Text(
-                        "Directorio de Asociaciones\nMunicipales de Bolivia",
+                        "Directorio Municipal",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
