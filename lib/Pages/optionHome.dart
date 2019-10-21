@@ -6,6 +6,7 @@ import 'package:fam_bolivia/Pages/sucre/SCRScreen.dart';
 import 'package:fam_bolivia/Pages/tarija/TJAScreen.dart';
 import 'package:flutter/material.dart';
 
+import 'AMD/AMDScreen.dart';
 import 'aco/ACOScreen.dart';
 import 'amdes/AMDESScreen.dart';
 import 'cbba/CBBAScreen.dart';
@@ -64,6 +65,10 @@ class OptionHome extends StatelessWidget {
           if (nomDep == 'AMDES') {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AMDESScreen()));
+          }
+          if (nomDep == 'AMD') {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AMDScreen()));
           }
         },
         child: Container(
