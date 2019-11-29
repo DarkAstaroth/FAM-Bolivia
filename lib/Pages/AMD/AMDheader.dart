@@ -43,7 +43,7 @@ class AMDHeader extends StatelessWidget
           Container(
             height: 80,
             child: Center(
-              child: Text("AMD",
+              child: Text("AMB",
               style: TextStyle(
                 fontFamily: "LatoBold",
                 fontSize: 30,

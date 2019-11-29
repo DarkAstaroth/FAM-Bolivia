@@ -58,7 +58,7 @@ class OptionHome extends StatelessWidget {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => PNDScreen()));
           }
-          if (nomDep == 'ACO') {
+          if (nomDep == 'ACOBOL') {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => ACOScreen()));
           }
@@ -66,7 +66,7 @@ class OptionHome extends StatelessWidget {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AMDESScreen()));
           }
-          if (nomDep == 'AMD') {
+          if (nomDep == 'AMB') {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AMDScreen()));
           }

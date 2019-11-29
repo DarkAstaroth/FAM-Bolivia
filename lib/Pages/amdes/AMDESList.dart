@@ -199,7 +199,7 @@ class _AMDESList extends State<AMDESList> {
                                     children: <Widget>[
                                       Flexible(
                                         child: Text(
-                                            "${notNull(snapshot.data[index].data["direccion"])}"),
+                                            "${notNull(snapshot.data[index].data["DIRECCION"])}"),
                                       ),
                                       Center(
                                           child: FloatingActionButton(

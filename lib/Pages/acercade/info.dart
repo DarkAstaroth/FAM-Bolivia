@@ -29,7 +29,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("COCHABAMBA - TOLATA",
+                          child: Text("LA PAZ",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -52,7 +52,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/cbba3.jpg"),
+                              image: AssetImage("assets/images/f1.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -62,7 +62,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("COCHABAMBA - QUILLACOLLO",
+                          child: Text("COCHABAMBA",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -85,7 +85,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/cbba1.jpg"),
+                              image: AssetImage("assets/images/f2.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -95,7 +95,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("COCHABAMBA - CHIMORE",
+                          child: Text("SANTA CRUZ",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -118,7 +118,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/cbba2.jpg"),
+                              image: AssetImage("assets/images/f3.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -128,7 +128,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("SUCRE",
+                          child: Text("ORURO",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -151,7 +151,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/sucre1.jpg"),
+                              image: AssetImage("assets/images/f4.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -161,7 +161,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("COROICO",
+                          child: Text("POTOSI",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -184,7 +184,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/coroico1.jpg"),
+                              image: AssetImage("assets/images/f5.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -194,7 +194,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("COPACABANA",
+                          child: Text("CHUQUISACA",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -217,7 +217,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/copa1.jpg"),
+                              image: AssetImage("assets/images/f6.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -227,7 +227,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("ORURO - SAJAMA",
+                          child: Text("TARIJA",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -250,7 +250,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/sajama1.jpg"),
+                              image: AssetImage("assets/images/f7.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -260,7 +260,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("PANDO - RIO BAY",
+                          child: Text("BENI",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -283,7 +283,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/pando1.jpg"),
+                              image: AssetImage("assets/images/f8.jpg"),
                               fit: BoxFit.cover
                               )),
                     ),
@@ -293,7 +293,7 @@ class InfoScreen extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: Container(
                           margin: EdgeInsets.all(15),
-                          child: Text("PANDO - PUERTO RICO",
+                          child: Text("PANDO",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: "LatoBold",
@@ -316,7 +316,7 @@ class InfoScreen extends StatelessWidget {
                                 blurRadius: 15.0)
                           ],
                           image: DecorationImage(
-                              image: AssetImage("assets/images/pando2.jpg"),
+                              image: AssetImage("assets/images/f9.jpg"),
                               fit: BoxFit.cover
                               )),
                     )

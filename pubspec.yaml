@@ -80,6 +80,15 @@ flutter:
    - assets/images/tarijad.png
    - assets/images/aco.jpg
    - assets/images/amdes.jpg
+   - assets/images/f1.jpg
+   - assets/images/f2.jpg
+   - assets/images/f3.jpg
+   - assets/images/f4.jpg
+   - assets/images/f5.jpg
+   - assets/images/f6.jpg
+   - assets/images/f7.jpg
+   - assets/images/f8.jpg
+   - assets/images/f9.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

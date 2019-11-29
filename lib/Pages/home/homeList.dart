@@ -37,11 +37,12 @@ class HomeList extends StatelessWidget {
                   OptionHome("assets/images/tarija.png", "Tarija"),
                   OptionHome("assets/images/beni.png", "Beni"),
                   OptionHome("assets/images/cobija.jpg", "Pando"),
-                  OptionHome("assets/images/aco.jpg", "ACO"),
-                  OptionHome("assets/images/amdes.jpg", "AMDES"),
-                  OptionHome("assets/images/sajama1.jpg", "AMD")
-                ],
-              ),
+                  OptionHome("assets/images/aco.jpg", "ACOBOL"),
+                   OptionHome("assets/images/amdes.jpg", "AMDES"),
+                  OptionHome("assets/images/sajama1.jpg", "AMB"),
+                 
+                ]
+              )
             ),
           ),
           Container(

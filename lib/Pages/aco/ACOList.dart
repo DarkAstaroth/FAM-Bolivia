@@ -186,7 +186,7 @@ class _ACOList extends State<ACOList> {
                                     children: <Widget>[
                                       Flexible(
                                         child: Text(
-                                            "${notNull(snapshot.data[index].data["direccion"])}"),
+                                            "${notNull(snapshot.data[index].data["DIRECCION"])}"),
                                       ),
                                       Center(
                                           child: FloatingActionButton(
