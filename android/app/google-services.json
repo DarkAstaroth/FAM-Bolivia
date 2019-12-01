@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "358499352908",
-    "firebase_url": "https://fambolivia-f1952.firebaseio.com",
-    "project_id": "fambolivia-f1952",
-    "storage_bucket": "fambolivia-f1952.appspot.com"
+    "project_number": "199447409040",
+    "firebase_url": "https://fambolivia-d25b8.firebaseio.com",
+    "project_id": "fambolivia-d25b8",
+    "storage_bucket": "fambolivia-d25b8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:358499352908:android:b6dbcda814135dfcea0fe9",
+        "mobilesdk_app_id": "1:199447409040:android:a8a9a977aef6ec5540c315",
         "android_client_info": {
-          "package_name": "com.example.fam_bolivia"
+          "package_name": "com.fambolivia.fam_bolivia"
         }
       },
       "oauth_client": [
         {
-          "client_id": "358499352908-bhmbtt4943q2fj4nd98dbgcfpiksnp7e.apps.googleusercontent.com",
+          "client_id": "199447409040-7q4049tc9qd3uad2jlep7is4i6riulc1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.fam_bolivia",
+            "package_name": "com.fambolivia.fam_bolivia",
             "certificate_hash": "a6303f25449876a590c437806e6775e037fb221c"
           }
         },
         {
-          "client_id": "358499352908-giscv2inoec1gaf79et0ab6ogj2oeu27.apps.googleusercontent.com",
+          "client_id": "199447409040-cjpeck5g67ngip64jlt26clqd13p66vv.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBlEl4PyIkWTrChLLEU79uiAeSxp_vBkwI"
+          "current_key": "AIzaSyBkRZ5fHymplm5dgHlFZN8v8fVASx173QA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "358499352908-giscv2inoec1gaf79et0ab6ogj2oeu27.apps.googleusercontent.com",
+              "client_id": "199447409040-cjpeck5g67ngip64jlt26clqd13p66vv.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

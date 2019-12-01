@@ -10,7 +10,7 @@ class AMDList extends StatefulWidget {
 class _AMDList extends State<AMDList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("amd").getDocuments();
+    QuerySnapshot qn = await firestore.collection("AMB").getDocuments();
     return qn.documents;
   }
 
