@@ -47,7 +47,7 @@ class AMDESHeader extends StatelessWidget
           Container(
             height: 80,
             child: Center(
-              child: Text("AMDES",
+              child: Text("SAM",
               style: TextStyle(
                 fontFamily: "LatoBold",
                 fontSize: 30,

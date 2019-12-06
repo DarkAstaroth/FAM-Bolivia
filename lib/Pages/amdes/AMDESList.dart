@@ -10,7 +10,7 @@ class AMDESList extends StatefulWidget {
 class _AMDESList extends State<AMDESList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("AMDES").orderBy("MUNICIPIO").getDocuments();
+    QuerySnapshot qn = await firestore.collection("AMDES").orderBy("Id").getDocuments();
     return qn.documents;
   }
 
@@ -102,19 +102,7 @@ class _AMDESList extends State<AMDESList> {
                                       )
                                     ],
                                   ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
-                                        "Municipio:  ",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text("${notNull(snapshot.data[index].data["MUNICIPIO"])}"),
-                                      )
-                                    ],
-                                  ),
+                                  
                                   Row(
                                     children: <Widget>[
                                       Text(
@@ -128,7 +116,19 @@ class _AMDESList extends State<AMDESList> {
                                       )
                                     ],
                                   ),
-                                  
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
+                                        "Municipio:  ",
+                                        style: TextStyle(
+                                            color: Color(0xff004fa3),
+                                            fontFamily: "LatoBold"),
+                                      ),
+                                      Container(
+                                        child: Text("${notNull(snapshot.data[index].data["MUNICIPIO"])}"),
+                                      )
+                                    ],
+                                  ),
                                   Row(
                                     children: <Widget>[
                                       Text(

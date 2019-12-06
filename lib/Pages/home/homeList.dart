@@ -27,7 +27,8 @@ class HomeList extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 0),
               child: ListView(
                 
-                children: <Widget>[ 
+                children: <Widget>[
+                  OptionHome("assets/images/amdes.jpg", "SAM"), 
                   OptionHome("assets/images/lapaz.jpg", "La Paz"),
                   OptionHome("assets/images/cbba.png", "Cochabamba"),
                   OptionHome("assets/images/scz.png", "Santa Cruz"),
@@ -37,9 +38,7 @@ class HomeList extends StatelessWidget {
                   OptionHome("assets/images/tarija.png", "Tarija"),
                   OptionHome("assets/images/beni.png", "Beni"),
                   OptionHome("assets/images/cobija.jpg", "Pando"),
-                  OptionHome("assets/images/aco.jpg", "ACOBOL"),
-                   OptionHome("assets/images/amdes.jpg", "AMDES"),
-                  OptionHome("assets/images/sajama1.jpg", "AMB"),
+                  OptionHome("assets/images/aco.jpg", "ACOBOL")
                  
                 ]
               )
@@ -55,7 +54,7 @@ class HomeList extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                "Departamentos",
+                "Sistema Asociativo Municipal",
                 style: TextStyle(
                     fontFamily: "LatoBold",
                     fontWeight: FontWeight.w500,

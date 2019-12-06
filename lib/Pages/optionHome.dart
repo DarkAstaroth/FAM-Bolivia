@@ -62,7 +62,7 @@ class OptionHome extends StatelessWidget {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => ACOScreen()));
           }
-          if (nomDep == 'AMDES') {
+          if (nomDep == 'SAM') {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AMDESScreen()));
           }

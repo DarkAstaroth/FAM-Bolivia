@@ -217,7 +217,7 @@ class _ACOList extends State<ACOList> {
             ),
             child: Center(
               child: Text(
-                "Presidentas ACOBOL",
+                "Coordinadoras",
                 style: TextStyle(
                     fontFamily: "LatoBold",
                     fontWeight: FontWeight.w500,
