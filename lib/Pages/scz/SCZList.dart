@@ -10,7 +10,7 @@ class SCZList extends StatefulWidget {
 class _SCZList extends State<SCZList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("santacruz").getDocuments();
+    QuerySnapshot qn = await firestore.collection("santacruz").orderBy("municipio").getDocuments();
     return qn.documents;
   }
 
@@ -145,7 +145,7 @@ class _SCZList extends State<SCZList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["nombre"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["alcalde"])}"),
                                       )
                                     ],
                                   ),

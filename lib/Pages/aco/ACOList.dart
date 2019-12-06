@@ -10,7 +10,7 @@ class ACOList extends StatefulWidget {
 class _ACOList extends State<ACOList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("aco").getDocuments();
+    QuerySnapshot qn = await firestore.collection("ACOBOL").getDocuments();
     return qn.documents;
   }
 

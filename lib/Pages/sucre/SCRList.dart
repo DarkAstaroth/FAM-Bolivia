@@ -9,7 +9,7 @@ class SCRList extends StatefulWidget {
 class _SCRList extends State<SCRList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("sucre").getDocuments();
+    QuerySnapshot qn = await firestore.collection("chuquisaca").orderBy("municipio").getDocuments();
     return qn.documents;
   }
 
@@ -145,7 +145,7 @@ class _SCRList extends State<SCRList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["nombre"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["alcalde"])}"),
                                       )
                                     ],
                                   ),

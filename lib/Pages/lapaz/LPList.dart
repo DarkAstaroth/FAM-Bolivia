@@ -10,7 +10,7 @@ class LPList extends StatefulWidget {
 class _LPList extends State<LPList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("lapaz").getDocuments();
+    QuerySnapshot qn = await firestore.collection("lapaz").orderBy("municipio").getDocuments();
     return qn.documents;
   }
 
@@ -151,7 +151,7 @@ class _LPList extends State<LPList> {
                                       ),
                                       Flexible(
                                         child: Text(
-                                            "${notNull(snapshot.data[index].data["nombre"])}"),
+                                            "${notNull(snapshot.data[index].data["alcalde"])}"),
                                       )
                                     ],
                                   ),

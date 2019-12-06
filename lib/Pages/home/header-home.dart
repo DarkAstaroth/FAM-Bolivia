@@ -34,7 +34,7 @@ class HeaderHome extends StatelessWidget {
                       icon: Icon(Icons.share),
                       onPressed: () {
                         Share.share(
-                            "Mira nuestra nueva aplicación de FAM Bolivia ");
+                            "Visita nuestro sitio web de FAM Bolivia\nhttps://fam.org.bo/");
                       },
                       color: Colors.white,
                     ),

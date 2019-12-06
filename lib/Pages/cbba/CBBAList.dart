@@ -9,7 +9,7 @@ class CBBAList extends StatefulWidget {
 class _CBBAList extends State<CBBAList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("cbba").getDocuments();
+    QuerySnapshot qn = await firestore.collection("cbba").orderBy("municipio").getDocuments();
     return qn.documents;
   }
 
@@ -149,7 +149,7 @@ class _CBBAList extends State<CBBAList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["nombre"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["alcalde"])}"),
                                       )
                                     ],
                                   ),

@@ -9,7 +9,7 @@ class ORUList extends StatefulWidget {
 class _ORUList extends State<ORUList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("oruro").getDocuments();
+    QuerySnapshot qn = await firestore.collection("oruro").orderBy("municipio").getDocuments();
     return qn.documents;
   }
 
@@ -143,7 +143,7 @@ class _ORUList extends State<ORUList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["nombre"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["alcalde"])}"),
                                       )
                                     ],
                                   ),

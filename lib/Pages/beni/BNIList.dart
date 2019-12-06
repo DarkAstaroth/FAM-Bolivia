@@ -9,7 +9,7 @@ class BNIList extends StatefulWidget {
 class _BNIList extends State<BNIList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("beni").getDocuments();
+    QuerySnapshot qn = await firestore.collection("beni").orderBy("municipio").getDocuments();
     return qn.documents;
   }
 
@@ -143,7 +143,7 @@ class _BNIList extends State<BNIList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["nombre"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["alcalde"])}"),
                                       )
                                     ],
                                   ),

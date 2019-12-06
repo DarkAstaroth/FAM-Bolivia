@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class AMDHeader extends StatelessWidget
 {
@@ -31,7 +32,10 @@ class AMDHeader extends StatelessWidget
                   color: Colors.white,
                 ),
                 IconButton(
-                  onPressed: (){},
+                  onPressed: (){
+                    Share.share(
+                            "Visita nuestro sitio web de FAM Bolivia\nhttps://fam.org.bo/");
+                  },
                   icon: Icon(Icons.share),
                   color: Colors.white,
                 )

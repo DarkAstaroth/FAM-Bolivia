@@ -10,7 +10,7 @@ class AMDESList extends StatefulWidget {
 class _AMDESList extends State<AMDESList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("amdes").getDocuments();
+    QuerySnapshot qn = await firestore.collection("AMDES").orderBy("MUNICIPIO").getDocuments();
     return qn.documents;
   }
 
@@ -105,19 +105,6 @@ class _AMDESList extends State<AMDESList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
-                                        "Asociación:  ",
-                                        style: TextStyle(
-                                            color: Color(0xff004fa3),
-                                            fontFamily: "LatoBold"),
-                                      ),
-                                      Container(
-                                        child: Text("${notNull(snapshot.data[index].data["ASOCIACION"])}"),
-                                      )
-                                    ],
-                                  ),
-                                  Row(
-                                    children: <Widget>[
-                                      Text(
                                         "Municipio:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
@@ -131,13 +118,27 @@ class _AMDESList extends State<AMDESList> {
                                   Row(
                                     children: <Widget>[
                                       Text(
+                                        "Asociación:  ",
+                                        style: TextStyle(
+                                            color: Color(0xff004fa3),
+                                            fontFamily: "LatoBold"),
+                                      ),
+                                      Container(
+                                        child: Text("${notNull(snapshot.data[index].data["ASOCIACION"])}"),
+                                      )
+                                    ],
+                                  ),
+                                  
+                                  Row(
+                                    children: <Widget>[
+                                      Text(
                                         "Presidente:  ",
                                         style: TextStyle(
                                             color: Color(0xff004fa3),
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["NOMBRES"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["PRESIDENTE"])}"),
                                       )
                                     ],
                                   ),
@@ -150,7 +151,7 @@ class _AMDESList extends State<AMDESList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["NOMBRE2"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["DIRECTOR"])}"),
                                       )
                                     ],
                                   ),

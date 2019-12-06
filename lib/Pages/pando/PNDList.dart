@@ -10,7 +10,7 @@ class PNDList extends StatefulWidget {
 class _PNDList extends State<PNDList> {
   Future getPost() async {
     var firestore = Firestore.instance;
-    QuerySnapshot qn = await firestore.collection("pando").getDocuments();
+    QuerySnapshot qn = await firestore.collection("pando").orderBy("municipio").getDocuments();
     return qn.documents;
   }
 
@@ -144,7 +144,7 @@ class _PNDList extends State<PNDList> {
                                             fontFamily: "LatoBold"),
                                       ),
                                       Flexible(
-                                        child: Text("${notNull(snapshot.data[index].data["nombre"])}"),
+                                        child: Text("${notNull(snapshot.data[index].data["alcalde"])}"),
                                       )
                                     ],
                                   ),
